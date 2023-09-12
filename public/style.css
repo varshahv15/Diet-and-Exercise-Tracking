@@ -92,6 +92,7 @@ body{
 }
 
 .wrap .btn{
+    text-decoration: none;
     width: 100%;
     height: 45px;
     background: #005e87;
@@ -136,14 +137,91 @@ body{
     text-decoration: underline;
 }
 
+/* below here options html file's css */
+/* Common styles for both pages */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
+.wrap-options {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px; /* Double the padding for a larger box */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
+h1 {
+    font-size: 32px; /* Increase font size for the title */
+    margin-bottom: 20px;
+}
 
+.options-list {
+    list-style: none;
+    padding: 0;
+}
 
+.option-item {
+    margin: 20px 0; /* Increase margin for button spacing */
+}
 
+.option-item a {
+    display: block;
+    background-color: #3498db;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px 40px; /* Double the padding for larger buttons */
+    border-radius: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
 
+.option-item a:hover {
+    background-color: #2980b9;
+}
 
+/* Icon styles */
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    fill: #ffffff; /* Icon color */
+}
 
+/* Specific icon styles for each option */
+.exercise-option .icon {
+    background-color: #e74c3c; /* Exercise icon color */
+}
+
+.diet-option .icon {
+    background-color: #2ecc71; /* Diet icon color */
+}
+
+.calorie-option .icon {
+    background-color: #f39c12; /* Calorie icon color */
+}
+
+/* Specific style for the "Return to Home Page" option */
+.option-return a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.option-return a:hover {
+    background-color: #3498db;
+    color: #fff;
+}
 
 
 

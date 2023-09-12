@@ -138,7 +138,6 @@ body{
 }
 
 /* below here options html file's css */
-/* Common styles for both pages */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -150,14 +149,14 @@ body {
     max-width: 400px;
     margin: 0 auto;
     background-color: #ffffff;
-    padding: 40px; /* Double the padding for a larger box */
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 h1 {
-    font-size: 32px; /* Increase font size for the title */
+    font-size: 32px; 
     margin-bottom: 20px;
 }
 
@@ -167,7 +166,7 @@ h1 {
 }
 
 .option-item {
-    margin: 20px 0; /* Increase margin for button spacing */
+    margin: 20px 0; 
 }
 
 .option-item a {
@@ -175,7 +174,7 @@ h1 {
     background-color: #3498db;
     color: #ffffff;
     text-decoration: none;
-    padding: 20px 40px; /* Double the padding for larger buttons */
+    padding: 20px 40px; 
     border-radius: 10px;
     width: 100%;
     transition: background-color 0.3s;
@@ -190,23 +189,22 @@ h1 {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-    fill: #ffffff; /* Icon color */
+    fill: #ffffff; 
 }
 
-/* Specific icon styles for each option */
+
 .exercise-option .icon {
-    background-color: #e74c3c; /* Exercise icon color */
+    background-color: #e74c3c; 
 }
 
 .diet-option .icon {
-    background-color: #2ecc71; /* Diet icon color */
+    background-color: #2ecc71; 
 }
 
 .calorie-option .icon {
-    background-color: #f39c12; /* Calorie icon color */
+    background-color: #f39c12; 
 }
 
-/* Specific style for the "Return to Home Page" option */
 .option-return a {
     display: inline-block;
     padding: 15px 30px;

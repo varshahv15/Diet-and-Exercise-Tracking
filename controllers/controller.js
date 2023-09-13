@@ -1,7 +1,11 @@
 let collection = require("../models/user");
 
 const postUser = (req, res) => {
-	let user = req.body;
+	//let user = req.body;
+	let user = {
+		username: "test_user",
+		password: "test_password",
+	};
 	collection.postUser(user, (err, result) => {
 		if (!err) {
 			res.json({ statusCode: 201, data: result, message: "success" });
@@ -34,8 +38,8 @@ const getUser = (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-	let kitchen = req.body;
-	collection.deleteUser(kitchen, (err, result) => {
+	let user = req.body;
+	collection.deleteUser(user, (err, result) => {
 		if (!err) {
 			res.json({ statusCode: 202, data: result, message: "deleted" });
 		}
@@ -43,8 +47,8 @@ const deleteUser = (req, res) => {
 };
 
 const updateUser = (req, res) => {
-	let kitchen = req.body;
-	collection.updateUser(kitchen, (err, result) => {
+	let user = req.body;
+	collection.updateUser(user, (err, result) => {
 		if (!err) {
 			res.json({ statusCode: 204, data: result, message: "deleted" });
 		}

@@ -5,7 +5,7 @@ function postUser(user) {
 		data: kitchen,
 		success: (result) => {
 			if (result.statusCode === 201) {
-				alert("Kitchen post success");
+				alert("User create success");
 			}
 		},
 	});

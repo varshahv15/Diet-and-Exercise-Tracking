@@ -1,6 +1,6 @@
 let client = require("../db/dbConnection");
 
-let collection = client.db().collection("user");
+let collection = client.db("sit725").collection("user");
 
 function postUser(user, callback) {
 	collection.insertOne(user, callback);

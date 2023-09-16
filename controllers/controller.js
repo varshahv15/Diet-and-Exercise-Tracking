@@ -1,11 +1,8 @@
 let collection = require("../models/user");
 
 const postUser = (req, res) => {
-	//let user = req.body;
-	let user = {
-		username: "test_user",
-		password: "test_password",
-	};
+	let user = req.body;
+
 	collection.postUser(user, (err, result) => {
 		if (!err) {
 			res.json({ statusCode: 201, data: result, message: "success" });
@@ -26,7 +23,8 @@ const getAllUsers = (req, res) => {
 };
 
 const getUser = (req, res) => {
-	collection.getUser((err, result) => {
+	let user = req.body;
+	collection.getUser(user, (err, result) => {
 		if (!err) {
 			res.json({
 				statusCode: 200,

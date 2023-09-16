@@ -5,33 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="styles/login_style.css">
+    <link rel="stylesheet" href="../styles/loginRegister.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
     <div class="wrap">
-        <form action="">
+        <form id="registerForm">
             <h1>Register</h1>
             <div class="inp-box">
-                <input type="email" placeholder="Email" required>
+                <input type="email" placeholder="Email" id="Email1" required>
                 <i class='bx bxs-envelope'></i>
             </div>
             <div class="inp-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" id="Username1" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inp-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" id="Password1" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            <button type="submit" class="btn">Register</button>
+            <a type="submit" class="btn" id="formSubmit">Register</a>
 
             <div class="login-link">
                 <p>Already have an account? <a href="/">Login</a></p>
             </div>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../scripts/registersc.js"></script>
 </body>
 
 </html>

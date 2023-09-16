@@ -6,12 +6,12 @@ function postUser(user, callback) {
 	collection.insertOne(user, callback);
 }
 
-function getAllUsers(user) {
+function getAllUsers(callback) {
 	collection.find({}).toArray(callback);
 }
 
 function getUser(user, callback) {
-	collection.find(user, callback);
+	collection.findOne(user, callback);
 }
 
 function deleteUser(user, callback) {

@@ -1,6 +1,7 @@
 let express = require("express");
 let router = express.Router();
-router.use("/users", require("./user_router"));
+//API for User
+router.use("/api/users", require("./user_router"));
 
 router.get("/", (req, res) => {
 	res.render("login");

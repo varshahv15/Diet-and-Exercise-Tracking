@@ -18,8 +18,8 @@ function deleteUser(user, callback) {
 	collection.deleteOne(user, callback);
 }
 
-function updateUser(user, callback) {
-	collection.updateOne(user, callback);
+function updateUser(user, data, callback) {
+	collection.updateOne(user, data, callback);
 }
 
 module.exports = { postUser, getAllUsers, getUser, deleteUser, updateUser };

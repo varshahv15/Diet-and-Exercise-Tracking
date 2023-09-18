@@ -3,20 +3,27 @@ let router = express.Router();
 //API for User
 router.use("/api/users", require("./user_router"));
 
+//API for view controller
+let viewController = require("../controllers/viewController");
+
 router.get("/", (req, res) => {
-	res.render("login");
+	viewController.getLoginView(req, res);
 });
 
 router.get("/register", (req, res) => {
-	res.render("register");
+	viewController.getRegisterView(req, res);
 });
 
 router.get("/options", (req, res) => {
-	res.render("options");
+	viewController.getOptionsView(req, res);
 });
 
 router.get("/exercise", (req, res) => {
-	res.render("exercise");
+	viewController.getExerciseView(req, res);
+});
+
+router.get("/calorie", (req, res) => {
+	viewController.getCalorieView(req, res);
 });
 
 module.exports = router;

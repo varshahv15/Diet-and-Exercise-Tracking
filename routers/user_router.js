@@ -18,8 +18,12 @@ user_router.delete("/", (req, res) => {
 	controller.deleteUser(req, res);
 });
 
-user_router.put("/", (req, res) => {
-	controller.updateUser(req, res);
+user_router.put("/exercise", (req, res) => {
+	controller.updateExercise(req, res);
+});
+
+user_router.post("/exercise", (req, res) => {
+	controller.postExercise(req, res);
 });
 
 module.exports = user_router;

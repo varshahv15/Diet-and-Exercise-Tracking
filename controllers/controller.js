@@ -6,6 +6,7 @@ const postUser = (req, res) => {
 	collection.postUser(user, (err, result) => {
 		if (!err) {
 			res.json({ statusCode: 201, data: result, message: "success" });
+			//console.log(data);
 		}
 	});
 };

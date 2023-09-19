@@ -1,14 +1,14 @@
-function postUser(user) {
+function registerUser(user) {
 	$.ajax({
-		url: "/api/users",
+		url: "/api/users/register",
 		type: "POST",
 		data: user,
 		dataType: "json",
 		success: (result) => {
 			if (result.statusCode === 201) {
 				alert("user post success");
+				window.location.href = "/";
 			}
-			window.location.href = "/";
 		},
 	});
 }
@@ -20,11 +20,12 @@ const formRegister = () => {
 	formData.password = $("#Password1").val();
 
 	console.log(formData);
-	postUser(formData);
+	registerUser(formData);
 };
 
 $(document).ready(function () {
-	$("#formSubmit").click(function () {
+	$("#RegisterF").on("click", function (e) {
+		e.preventDefault();
 		formRegister();
 	});
 });

@@ -16,12 +16,12 @@ function loginUser(user) {
 }
 
 const formLogin = () => {
-	let formLogin1 = {};
-	formLogin1.username = $("#Username2").val();
-	formLogin1.password = $("#Password2").val();
+	let formLogin_var = {};
+	formLogin_var.username = $("#Username2").val();
+	formLogin_var.password = $("#Password2").val();
 
-	//console.log(formLogin1);
-	loginUser(formLogin1);
+	console.log(formLogin_var);
+	loginUser(formLogin_var);
 };
 
 $(document).ready(function () {
@@ -30,7 +30,8 @@ $(document).ready(function () {
 		window.location.href = "/options";
 	}
 
-	$("#formSubmit1").click(function () {
+	$("#LoginF").on("click", function (e) {
+		e.preventDefault();
 		formLogin();
 	});
 });

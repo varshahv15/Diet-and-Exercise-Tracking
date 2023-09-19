@@ -45,7 +45,12 @@ const loggingUserData = () => {
 };
 
 $(document).ready(function () {
-	$("#Exercise_cal").click(function () {
+	let save_cookie = $.cookie("username");
+	if (save_cookie == null) {
+		window.location.href = "/";
+	}
+	$("#ExerciseF").on("click", function (e) {
+		e.preventDefault();
 		loggingUserData();
 	});
 });

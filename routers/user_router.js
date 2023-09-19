@@ -2,7 +2,7 @@ let express = require("express");
 let user_router = express.Router();
 let controller = require("../controllers/controller");
 
-user_router.post("/", (req, res) => {
+user_router.post("/register", (req, res) => {
 	controller.postUser(req, res);
 });
 

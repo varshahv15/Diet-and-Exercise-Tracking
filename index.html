@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>Exercise Logging</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise Logging</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Exercise Logger</h1>
-    <form id="exercise-form">
-      <label for="exercise">Exercise Type:</label>
-      <select id="exercise" name="exercise">
-        <option value="dropdown">selectone</option>
-        <option value="cycling">Cycling</option>
-        <option value="running">Running</option>
-        <option value="walking">Walking</option>
-        <option value="swimming">Swimming</option>
-      </select><br>
+    <div class="container">
+        <h1 class="header">Exercise Logger</h1>
+        <form id="exercise-form">
+            <label for="exercise" class="label">Exercise:</label>
+            <select id="exercise" name="exercise" class="select" onchange="changeBackground()">
+                <option value="running">Running</option>
+                <option value="swimming">Swimming</option>
+                <option value="cycling">Cycling</option>
+                <option value="walking">Walking</option>
+            </select><br>
+            <br>
 
-      <label for="time">Time (minutes):</label>
-      <input type="number" id="time" name="time" min="1"><br>
+            <label for="time" class="label">Time (minutes):</label>
+            <input type="number" id="time" name="time" min="1" class="input"><br>
+            <br>
 
-      <button type="button" onclick="calculateCalories()">Calculate Calories</button>
-    </form>
-    <div id="result"></div>
-  </div>
-  <script src="script.js"></script>
+            <button type="button" onclick="calculateCalories()" class="button">Calculate Calories</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

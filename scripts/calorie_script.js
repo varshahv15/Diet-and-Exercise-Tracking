@@ -18,6 +18,7 @@ function calculateCalories() {
 		return; // Exit the function if any field is missing
 	}
 
+
 	// Define calorie ranges for different activity levels (adjust these as needed)
 	const activityLevels = [
 		{ level: "Sedentary", minCalories: 1800, maxCalories: 2200 },
@@ -77,3 +78,8 @@ function calculateCalories() {
 			"Please select an activity level.";
 	}
 }
+
+let socket = io();
+	socket.on('Number', (message) => {
+	console.log('Random number is: ' + message);
+})

@@ -6,6 +6,7 @@ function updateExerciseData(user_data) {
 		dataType: "json",
 		success: (result) => {
 			if (result.statusCode === 204) {
+				//alert("Exercise data updated successfully");
 			}
 		},
 	});

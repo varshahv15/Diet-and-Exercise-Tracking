@@ -77,13 +77,17 @@ const postExercise = (req, res) => {
 	let user = user_object.cookie1;
 	delete user_object.cookie1;
 	user_data = user_object;
-	console.log(user_data);
+	console.log("add exercise: ", user_data);
 	collection.updateUser(
 		{ username: user },
 		{ $push: user_data },
 		(err, result) => {
 			if (!err) {
-				res.json({ statusCode: 204, data: result, message: "updated" });
+				res.json({
+					statusCode: 205,
+					data: result,
+					message: "exercise data add",
+				});
 			}
 		}
 	);

@@ -38,7 +38,7 @@ describe("Test function API Login	", function () {
 });
 
 describe("Test function API post new Exercise data", function () {
-	it("expected status code 204", function (done) {
+	it("expected status code 205", function (done) {
 		chai.request("http://localhost:3000")
 			.post("/api/users/exercise")
 			//.set("content-type", "application/x-www-form-urlencoded")
@@ -46,9 +46,9 @@ describe("Test function API post new Exercise data", function () {
 			.send(exercise)
 			.end(function (error, response, body) {
 				let bodyObj = response.body;
-				console.log(bodyObj.data);
-				//expect(bodyObj.message == "update") &&
-				//	expect(bodyObj.statusCode == 205);
+				console.log(bodyObj);
+				expect(bodyObj.message == "exercise data add") &&
+					expect(bodyObj.statusCode == 205);
 				done();
 			});
 	});

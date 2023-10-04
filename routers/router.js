@@ -26,4 +26,8 @@ router.get("/calorie", (req, res) => {
 	viewController.getCalorieView(req, res);
 });
 
+router.get("/chatbox", (req, res) => {
+	viewController.getChatBox(req, res);
+});
+
 module.exports = router;

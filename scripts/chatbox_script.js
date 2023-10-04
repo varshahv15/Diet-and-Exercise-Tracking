@@ -4,11 +4,14 @@ const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
 
 $(document).ready(function () {
-	let user_id = String($.cookie("username"));
+	let save_cookie = $.cookie("username");
+	if (save_cookie == null) {
+		window.location.href = "/";
+	}
+	let user_id = save_cookie;
 
 	//const name = prompt("What is your name?");
-	appendMessage("You joined");
-	appendMessage(user_id);
+	appendMessage(`You joined with name: ${user_id}`);
 	socket.emit("newConnect", user_id);
 
 	socket.on("chat-message", (data) => {

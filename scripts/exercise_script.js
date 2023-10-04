@@ -20,6 +20,14 @@ const exerciseCalories = {
 	walking: 5,
 };
 
+function changeBackground() {
+	const exercise = document.getElementById("exercise").value;
+	document.body.style.backgroundImage = `url('images/${exercise}.jpg')`;
+	document.getElementById(
+		"result"
+	).style.backgroundImage = `url('images/${exercise}.jpg')`;
+}
+
 function calculateCalories() {
 	const exercise = document.getElementById("exercise").value;
 	const time = document.getElementById("time").value;
@@ -28,7 +36,7 @@ function calculateCalories() {
 
 	document.getElementById(
 		"result"
-	).innerHTML = `You have burned ${caloriesBurned} calories by doing ${time} minutes of ${exercise}.`;
+	).innerHTML = `<span class="output-text"> You have burned ${caloriesBurned} calories by doing ${time} minutes of ${exercise}.</span>`;
 	return {
 		exerciseList: {
 			exercise_type: exercise,
@@ -39,24 +47,19 @@ function calculateCalories() {
 	};
 }
 
-const loggingUserData = () => {
+const loggingExerciseData = () => {
 	data = calculateCalories();
 	console.log(data.exercise1);
 	updateExerciseData(data);
 };
-
-let socket = io();
-	socket.on('Number', (message) => {
-	console.log('Random number is: ' + message);
-})
 
 $(document).ready(function () {
 	let save_cookie = $.cookie("username");
 	if (save_cookie == null) {
 		window.location.href = "/";
 	}
-	$("#ExerciseF").on("click", function (e) {
+	$("#Exercise_C").on("click", function (e) {
 		e.preventDefault();
-		loggingUserData();
+		loggingExerciseData();
 	});
 });

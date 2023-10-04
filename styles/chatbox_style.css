@@ -29,6 +29,6 @@
         display: flex;
     }
 
-    #message-input {
+    #message-input, #userid-input {
         flex-grow: 1;
     }

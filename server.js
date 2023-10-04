@@ -21,7 +21,6 @@ let users = {};
 io.on("connection", (socket) => {
 	socket.on("newConnect", (name) => {
 		console.log("user connected");
-		console.log(name);
 		users[socket.id] = name;
 		socket.broadcast.emit("user-connected", name);
 	});

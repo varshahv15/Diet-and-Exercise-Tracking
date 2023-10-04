@@ -18,6 +18,14 @@ user_router.delete("/", (req, res) => {
 	controller.deleteUser(req, res);
 });
 
+user_router.put("/diet", (req, res) => {
+	controller.updateDiet(req, res);
+});
+
+user_router.post("/diet", (req, res) => {
+	controller.postDiet(req, res);
+});
+
 user_router.put("/exercise", (req, res) => {
 	controller.updateExercise(req, res);
 });

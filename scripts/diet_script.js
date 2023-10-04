@@ -1,7 +1,7 @@
 // JavaScript logic goes here
 function updateDietData(user_data) {
 	$.ajax({
-		url: "/api/users/exercise",
+		url: "/api/users/diet",
 		type: "POST",
 		data: user_data,
 		dataType: "json",
@@ -66,6 +66,12 @@ function calculateCalories(itemName, itemAmount) {
 		return 0;
 	}
 }
+
+const loggingDietData = () => {
+	data = calculateTotalCalories();
+	console.log(data.exercise1);
+	updateExerciseData(data);
+};
 
 $(document).ready(function () {
 	let save_cookie = $.cookie("username");

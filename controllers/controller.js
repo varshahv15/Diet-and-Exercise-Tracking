@@ -55,6 +55,48 @@ const deleteUser = (req, res) => {
 	});
 };
 
+const updateDiet = (req, res) => {
+	let user_object = req.body;
+	let user = user_object.cookie1;
+	delete user_object.cookie1;
+	user_data = user_object;
+	console.log(user_data);
+	collection.updateUser(
+		{ username: user },
+		{ $set: user_data },
+		(err, result) => {
+			if (!err) {
+				res.json({
+					statusCode: 204,
+					data: result,
+					message: "diet data updated",
+				});
+			}
+		}
+	);
+};
+
+const postDiet = (req, res) => {
+	let user_object = req.body;
+	let user = user_object.cookie1;
+	delete user_object.cookie1;
+	user_data = user_object;
+	console.log("add exercise: ", user_data);
+	collection.updateUser(
+		{ username: user },
+		{ $push: user_data },
+		(err, result) => {
+			if (!err) {
+				res.json({
+					statusCode: 205,
+					data: result,
+					message: "diet data add",
+				});
+			}
+		}
+	);
+};
+
 const updateExercise = (req, res) => {
 	let user_object = req.body;
 	let user = user_object.cookie1;
@@ -66,7 +108,11 @@ const updateExercise = (req, res) => {
 		{ $set: user_data },
 		(err, result) => {
 			if (!err) {
-				res.json({ statusCode: 204, data: result, message: "updated" });
+				res.json({
+					statusCode: 204,
+					data: result,
+					message: "exercise data updated",
+				});
 			}
 		}
 	);
@@ -100,4 +146,6 @@ module.exports = {
 	updateExercise,
 	getUser,
 	postExercise,
+	updateDiet,
+	postDiet,
 };

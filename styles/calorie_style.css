@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    background-image: url('../images/calories.jpg');
 }
 
 .container {
@@ -7,17 +8,18 @@ body {
     margin: 0 auto;
     text-align: center;
     padding: 40px;
-    background-color: rgb(206, 197, 246);
+    background-color: #004756;
 }
 
 h1 {
-    color: #333;
+    color: #C7F4E2;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #C7F4E2;
 }
 
 input[type="number"] {
@@ -37,8 +39,8 @@ select {
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #C7F4E2;
+    color: #004756;
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -54,4 +56,5 @@ button {
     margin-top: 20px;
     font-weight: bold;
     font-style: italic;
+    color: white;
 }

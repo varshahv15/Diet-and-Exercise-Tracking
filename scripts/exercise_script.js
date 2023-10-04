@@ -53,6 +53,16 @@ const loggingExerciseData = () => {
 	updateExerciseData(data);
 };
 
+const backButton = document.getElementById("Backbutton");     // Add a click event listener to the button    
+backButton.addEventListener("click", function() {         // Redirect to the options page when the button is clicked        
+window.location.href = "/options"; // Update the URL accordingly   
+});
+
+let socket = io();
+	socket.on('Number', (message) => {
+	console.log('Random number is: ' + message);
+})
+
 $(document).ready(function () {
 	let save_cookie = $.cookie("username");
 	if (save_cookie == null) {

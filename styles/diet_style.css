@@ -2,8 +2,33 @@
 /* For simplicity, you can style your elements as you prefer */
 body {
     font-family: Arial, sans-serif;
+    background-image: url('../images/diet-plan.jpg');
+}
+
+.container {
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 25px;
 }
 
 #log {
     margin-bottom: 10px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
 }

@@ -87,3 +87,27 @@ $(document).ready(function () {
 		calculateTotalCalories();
 	});
 });
+
+const backButton = document.getElementById("Backbutton");     // Add a click event listener to the button    
+backButton.addEventListener("click", function() {         // Redirect to the options page when the button is clicked        
+window.location.href = "/options"; // Update the URL accordingly   
+});
+
+let socket = io();
+	socket.on('Number', (message) => {
+	console.log('Random number is: ' + message);
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Add an event listener for the reset button
+    const resetButton = document.getElementById("reset-button");
+    resetButton.addEventListener("click", function () {
+        // Clear the input fields
+        document.getElementById("meal-name").value = "";
+        document.getElementById("item-name").value = "";
+        document.getElementById("item-amount").value = "";
+        document.getElementById("meal-details").innerHTML = "";
+        document.getElementById("total-calories").textContent = "0";
+    });
+
+});

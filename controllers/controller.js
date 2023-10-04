@@ -5,7 +5,11 @@ const postUser = (req, res) => {
 
 	collection.postUser(user, (err, result) => {
 		if (!err) {
-			res.json({ statusCode: 201, data: result, message: "success" });
+			res.json({
+				statusCode: 201,
+				data: result,
+				message: "new user add",
+			});
 			//console.log(data);
 		}
 	});
@@ -48,49 +52,30 @@ const getUser = (req, res) => {
 
 const deleteUser = (req, res) => {
 	let user = req.body;
+	//console.log(req);
 	collection.deleteUser(user, (err, result) => {
 		if (!err) {
-			res.json({ statusCode: 202, data: result, message: "deleted" });
+			res.json({
+				statusCode: 202,
+				data: result,
+				message: "user deleted",
+			});
 		}
 	});
 };
 
-const updateDiet = (req, res) => {
+const updateUserPassword = (req, res) => {
 	let user_object = req.body;
-	let user = user_object.cookie1;
-	delete user_object.cookie1;
-	user_data = user_object;
-	console.log(user_data);
+	console.log(user_object);
 	collection.updateUser(
-		{ username: user },
-		{ $set: user_data },
+		{ username: user_object.username },
+		{ $set: { password: user_object.password } },
 		(err, result) => {
 			if (!err) {
 				res.json({
-					statusCode: 204,
+					statusCode: 203,
 					data: result,
-					message: "diet data updated",
-				});
-			}
-		}
-	);
-};
-
-const postDiet = (req, res) => {
-	let user_object = req.body;
-	let user = user_object.cookie1;
-	delete user_object.cookie1;
-	user_data = user_object;
-	console.log("add exercise: ", user_data);
-	collection.updateUser(
-		{ username: user },
-		{ $push: user_data },
-		(err, result) => {
-			if (!err) {
-				res.json({
-					statusCode: 205,
-					data: result,
-					message: "diet data add",
+					message: "user password updated",
 				});
 			}
 		}
@@ -146,6 +131,5 @@ module.exports = {
 	updateExercise,
 	getUser,
 	postExercise,
-	updateDiet,
-	postDiet,
+	updateUserPassword,
 };

@@ -14,8 +14,12 @@ user_router.post("/login", (req, res) => {
 	controller.getUser(req, res);
 });
 
-user_router.delete("/", (req, res) => {
+user_router.delete("/delete", (req, res) => {
 	controller.deleteUser(req, res);
+});
+
+user_router.put("/updatePassword", (req, res) => {
+	controller.updateUserPassword(req, res);
 });
 
 user_router.put("/diet", (req, res) => {

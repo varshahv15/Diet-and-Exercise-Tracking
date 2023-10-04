@@ -22,4 +22,10 @@ function updateUser(user, data, callback) {
 	collection.updateOne(user, data, callback);
 }
 
-module.exports = { postUser, getAllUsers, getUser, deleteUser, updateUser };
+module.exports = {
+	postUser,
+	getAllUsers,
+	getUser,
+	deleteUser,
+	updateUser,
+};

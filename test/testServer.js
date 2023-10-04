@@ -8,7 +8,17 @@ chai.use(chaiHTTP);
 
 let user = {
 	username: "aaa",
-	password: "aaaaa",
+	password: "aaaaaa",
+};
+
+let new_user = {
+	username: "test_user1",
+	password: "test_user1",
+};
+
+let update_user = {
+	username: "kkk",
+	password: "passwordChange",
 };
 
 let exercise = {
@@ -49,6 +59,57 @@ describe("Test function API post new Exercise data", function () {
 				console.log(bodyObj);
 				expect(bodyObj.message == "exercise data add") &&
 					expect(bodyObj.statusCode == 205);
+				done();
+			});
+	});
+});
+
+describe("Test function API register User", function () {
+	it("expected status code 201", function (done) {
+		chai.request("http://localhost:3000")
+			.post("/api/users/register")
+			//.set("content-type", "application/x-www-form-urlencoded")
+			.type("form")
+			.send(new_user)
+			.end(function (error, response, body) {
+				let bodyObj = response.body;
+				console.log(bodyObj);
+				expect(bodyObj.message == "new user add") &&
+					expect(bodyObj.statusCode == 201);
+				done();
+			});
+	});
+});
+
+describe("Test function API Delete User", function () {
+	it("expected status code 202", function (done) {
+		chai.request("http://localhost:3000")
+			.delete("/api/users/delete")
+			//.set("content-type", "application/x-www-form-urlencoded")
+			.type("form")
+			.send(new_user)
+			.end(function (error, response, body) {
+				let bodyObj = response.body;
+				console.log(bodyObj);
+				expect(bodyObj.message == "user deleted") &&
+					expect(bodyObj.statusCode == 202);
+				done();
+			});
+	});
+});
+
+describe("Test function API Update User Password", function () {
+	it("expected status code 203", function (done) {
+		chai.request("http://localhost:3000")
+			.put("/api/users/updatePassword")
+			//.set("content-type", "application/x-www-form-urlencoded")
+			.type("form")
+			.send(update_user)
+			.end(function (error, response, body) {
+				let bodyObj = response.body;
+				console.log(bodyObj);
+				expect(bodyObj.message == "user password updated") &&
+					expect(bodyObj.statusCode == 203);
 				done();
 			});
 	});

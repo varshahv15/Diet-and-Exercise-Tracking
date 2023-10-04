@@ -10,7 +10,6 @@ $(document).ready(function () {
 	}
 	let user_id = save_cookie;
 
-	//const name = prompt("What is your name?");
 	appendMessage(`You joined with name: ${user_id}`);
 	socket.emit("newConnect", user_id);
 

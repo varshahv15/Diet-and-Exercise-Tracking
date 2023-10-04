@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     background-image: url('../images/calories.jpg');
+    background-size: cover;
 }
 
 .container {

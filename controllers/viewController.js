@@ -18,7 +18,11 @@ const getCalorieView = (req, res) => {
 	res.render("../views/calorie.ejs");
 };
 
-const getChatBox = (req, res) => {
+const getDietView = (req, res) => {
+	res.render("../views/diet.ejs");
+};
+
+const getChatBoxView = (req, res) => {
 	res.render("../views/chatbox.ejs");
 };
 
@@ -28,5 +32,6 @@ module.exports = {
 	getExerciseView,
 	getOptionsView,
 	getCalorieView,
-	getChatBox,
+	getDietView,
+	getChatBoxView,
 };

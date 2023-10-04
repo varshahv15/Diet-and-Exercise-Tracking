@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Logger</title>
+    <link rel="stylesheet" type="text/css" href="../styles/diet_style.css">
+</head>
+
+<body>
+    <h1>Diet Logger</h1>
+
+    <div id="log">
+        <h2>Log a Meal</h2>
+        <label for="meal-name">Meal Name:</label>
+        <input type="text" id="meal-name"><br><br>
+
+        <div id="meal-items">
+            <div id="Item_C">
+                <label for="item-name">Meal Item:</label>
+                <input type="text" id="item-name">
+                <label for="item-amount">Amount (grams):</label>
+                <input type="number" id="item-amount">
+                <button type="button">Add Item</button>
+            </div>
+        </div>
+        <br>
+        <div id="Diet_C">
+            <button type="button">Calculate Total Calories</button>
+        </div>
+        <h3>Meal Details:</h3>
+        <ul id="meal-details"></ul>
+
+        <p>Total Calories: <span id="total-calories">0</span> calories</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="../scripts/diet_script.js"></script>
+</body>
+
+</html>

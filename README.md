@@ -15,7 +15,8 @@ Diet-and-Exercise-Tracking
 
 ### Installing
 
-* 1/ Clone the project by using command: 
+* 1/ Clone the project by using command:
+
 ```
 git clone https://github.com/varshahv15/Diet-and-Exercise-Tracking.git
 ```

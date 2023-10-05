@@ -15,16 +15,18 @@ Diet-and-Exercise-Tracking
 
 ### Installing
 
-* 1/ Clone the project by using command: git clone https://github.com/varshahv15/Diet-and-Exercise-Tracking.git
+* 1/ Clone the project by using command: 
+```
+git clone https://github.com/varshahv15/Diet-and-Exercise-Tracking.git
+```
 * 2/ Go to Diet-and-Exercise-Tracking Folder
 * 3/ Open the Terminal/Command Line in side the folder location
-
 
 ### Executing program
 
 * 1/ Run the program:
 ```
- npm start
+npm start
 ```
 
 * 2/ Run the test case:

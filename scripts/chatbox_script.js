@@ -13,23 +13,23 @@ $(document).ready(function () {
 	appendMessage(`You joined with name: ${user_id}`);
 	socket.emit("newConnect", user_id);
 
-	socket.on("chat-message", (data) => {
+	socket.on("chat_message", (data) => {
 		appendMessage(`${data.name}: ${data.message}`);
 	});
 
-	socket.on("user-connected", (name) => {
-		appendMessage(`${name} connected`);
+	socket.on("user_connected", (name) => {
+		appendMessage(`${name} had connected`);
 	});
 
-	socket.on("user-disconnected", (name) => {
-		appendMessage(`${name} disconnected`);
+	socket.on("user_disconnected", (name) => {
+		appendMessage(`${name} had disconnected`);
 	});
 
 	messageForm.addEventListener("submit", (e) => {
 		e.preventDefault();
 		const message = messageInput.value;
 		appendMessage(`You: ${message}`);
-		socket.emit("send-chat-message", message);
+		socket.emit("send_message", message);
 		messageInput.value = "";
 	});
 

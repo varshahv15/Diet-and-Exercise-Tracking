@@ -20,19 +20,19 @@ app.use("/", router);
 let users = {};
 io.on("connection", (socket) => {
 	socket.on("newConnect", (name) => {
-		console.log("user connected");
+		//console.log("user connected");
 		users[socket.id] = name;
-		socket.broadcast.emit("user-connected", name);
+		socket.broadcast.emit("user_connected", name);
 	});
-	socket.on("send-chat-message", (message) => {
-		socket.broadcast.emit("chat-message", {
+	socket.on("send_message", (message) => {
+		socket.broadcast.emit("chat_message", {
 			message: message,
 			name: users[socket.id],
 		});
 	});
 	socket.on("disconnect", () => {
-		console.log("user disconnected");
-		socket.broadcast.emit("user-disconnected", users[socket.id]);
+		//console.log("user disconnected");
+		socket.broadcast.emit("user_disconnected", users[socket.id]);
 		delete users[socket.id];
 	});
 });

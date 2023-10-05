@@ -18,7 +18,6 @@ function calculateCalories() {
 		return; // Exit the function if any field is missing
 	}
 
-
 	// Define calorie ranges for different activity levels (adjust these as needed)
 	const activityLevels = [
 		{ level: "Sedentary", minCalories: 1800, maxCalories: 2200 },
@@ -54,7 +53,7 @@ function calculateCalories() {
 						borderColor: "rgba(75, 192, 192, 1)",
 						borderWidth: 3,
 						data: minCalories,
-						color: 'white'
+						color: "white",
 					},
 					{
 						label: "Max Calories",
@@ -62,21 +61,21 @@ function calculateCalories() {
 						borderColor: "rgba(255, 99, 132, 1)",
 						borderWidth: 3,
 						data: maxCalories,
-						color: 'white'
+						color: "white",
 					},
 				],
 			},
-			
+
 			options: {
 				scales: {
 					y: {
 						beginAtZero: true,
-					gird: {
-						color: 'white'
-					},
-					ticks: {
-						color: 'white'
-					},
+						gird: {
+							color: "white",
+						},
+						ticks: {
+							color: "white",
+						},
 					},
 				},
 			},
@@ -88,13 +87,8 @@ function calculateCalories() {
 	}
 }
 
-
-const backButton = document.getElementById("Backbutton");     // Add a click event listener to the button    
-backButton.addEventListener("click", function() {         // Redirect to the options page when the button is clicked        
-window.location.href = "/options"; // Update the URL accordingly   
+const backButton = document.getElementById("Backbutton"); // Add a click event listener to the button
+backButton.addEventListener("click", function () {
+	// Redirect to the options page when the button is clicked
+	window.location.href = "/options"; // Update the URL accordingly
 });
-
-let socket = io();
-	socket.on('Number', (message) => {
-	console.log('Random number is: ' + message);
-})

@@ -12,8 +12,13 @@ let user = {
 };
 
 let new_user = {
-	username: "test_user1",
-	password: "test_user1",
+	username: "test_new_user1",
+	password: "test_new_user1",
+};
+
+let delete_user = {
+	username: "delete_user2",
+	password: "delete_user2",
 };
 
 let update_user = {
@@ -39,7 +44,7 @@ describe("Test function API Login	", function () {
 			.send(user)
 			.end(function (error, response, body) {
 				let bodyObj = response.body;
-				console.log(bodyObj.data);
+				//console.log(bodyObj.data);
 				expect(bodyObj.data == user.username) &&
 					expect(bodyObj.statusCode == 201);
 				done();
@@ -56,7 +61,7 @@ describe("Test function API post new Exercise data", function () {
 			.send(exercise)
 			.end(function (error, response, body) {
 				let bodyObj = response.body;
-				console.log(bodyObj);
+				//console.log(bodyObj);
 				expect(bodyObj.message == "exercise data add") &&
 					expect(bodyObj.statusCode == 205);
 				done();
@@ -73,7 +78,7 @@ describe("Test function API register User", function () {
 			.send(new_user)
 			.end(function (error, response, body) {
 				let bodyObj = response.body;
-				console.log(bodyObj);
+				//console.log(bodyObj);
 				expect(bodyObj.message == "new user add") &&
 					expect(bodyObj.statusCode == 201);
 				done();
@@ -87,10 +92,10 @@ describe("Test function API Delete User", function () {
 			.delete("/api/users/delete")
 			//.set("content-type", "application/x-www-form-urlencoded")
 			.type("form")
-			.send(new_user)
+			.send(delete_user)
 			.end(function (error, response, body) {
 				let bodyObj = response.body;
-				console.log(bodyObj);
+				//console.log(bodyObj);
 				expect(bodyObj.message == "user deleted") &&
 					expect(bodyObj.statusCode == 202);
 				done();
@@ -107,9 +112,24 @@ describe("Test function API Update User Password", function () {
 			.send(update_user)
 			.end(function (error, response, body) {
 				let bodyObj = response.body;
-				console.log(bodyObj);
+				//console.log(bodyObj);
 				expect(bodyObj.message == "user password updated") &&
 					expect(bodyObj.statusCode == 203);
+				done();
+			});
+	});
+});
+
+describe("Test function API Get All User", function () {
+	it("expected status code 203", function (done) {
+		chai.request("http://localhost:3000")
+			.get("/api/users/all")
+			//.set("content-type", "application/x-www-form-urlencoded")
+			.end(function (error, response, body) {
+				let bodyObj = response.body;
+				console.log(bodyObj);
+				expect(bodyObj.message == "get all users success") &&
+					expect(bodyObj.statusCode == 200);
 				done();
 			});
 	});

@@ -67,10 +67,31 @@ function calculateCalories(itemName, itemAmount) {
 	}
 }
 
+const backButton = document.getElementById("Backbutton"); // Add a click event listener to the button
+backButton.addEventListener("click", function () {
+	// Redirect to the options page when the button is clicked
+	window.location.href = "/options"; // Update the URL accordingly
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Add an event listener for the reset button
+	const resetButton = document.getElementById("reset-button");
+	resetButton.addEventListener("click", function () {
+		// Clear the input fields
+		document.getElementById("meal-name").value = "";
+		document.getElementById("item-name").value = "";
+		document.getElementById("item-amount").value = "";
+		document.getElementById("meal-details").innerHTML = "";
+		document.getElementById("total-calories").textContent = "0";
+	});
+});
+
 const loggingDietData = () => {
-	data = calculateTotalCalories();
-	console.log(data.exercise1);
-	updateExerciseData(data);
+	let data = {};
+	data = { mealList: JSON.stringify(mealItems) };
+	//console.log(data);
+	calculateTotalCalories();
+	//updateDietData(data);
 };
 
 $(document).ready(function () {
@@ -84,30 +105,6 @@ $(document).ready(function () {
 	});
 	$("#Diet_C").on("click", function (e) {
 		e.preventDefault();
-		calculateTotalCalories();
+		loggingDietData();
 	});
-});
-
-const backButton = document.getElementById("Backbutton");     // Add a click event listener to the button    
-backButton.addEventListener("click", function() {         // Redirect to the options page when the button is clicked        
-window.location.href = "/options"; // Update the URL accordingly   
-});
-
-let socket = io();
-	socket.on('Number', (message) => {
-	console.log('Random number is: ' + message);
-})
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Add an event listener for the reset button
-    const resetButton = document.getElementById("reset-button");
-    resetButton.addEventListener("click", function () {
-        // Clear the input fields
-        document.getElementById("meal-name").value = "";
-        document.getElementById("item-name").value = "";
-        document.getElementById("item-amount").value = "";
-        document.getElementById("meal-details").innerHTML = "";
-        document.getElementById("total-calories").textContent = "0";
-    });
-
 });

@@ -10,14 +10,25 @@
 
 <body>
 <div id="message-container"></div>
-<form id="send-container">
-    <label for="message-input">Message:</label>
-    <input type="text" id="message-input">
-    <button type="submit" id="send-button">Send</button>
-    <label for="userid-input">User Name:</label>
-    <input type="text" id="userid-input">
-    <button type="submit" id="userid-button">Select User</button>
-</form>
+
+    <form id="send-container">
+        <ul>
+            <li>
+                <label for="message-input">Message:</label>
+                <input type="text" id="message-input">
+                <button type="submit" id="send-button">Send</button>
+            </li>
+            <br>
+            <li>
+                <label for="userid-input">Select User to Talk:</label>
+                <input type="text" id="userid-input">
+                <button type="submit" id="userid-button">Select User</button>
+            </li>
+            <br>
+            <li class="option-return"><a href="/options">Return to Options</a></li>
+        </ul>
+    </form>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>

@@ -23,11 +23,6 @@ const formRegister = () => {
 	registerUser(formData);
 };
 
-let socket = io();
-	socket.on('Number', (message) => {
-	console.log('Random number is: ' + message);
-})
-
 $(document).ready(function () {
 	$("#RegisterF").on("click", function (e) {
 		e.preventDefault();

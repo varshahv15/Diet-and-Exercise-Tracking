@@ -3,6 +3,9 @@
         margin: 0;
         display: flex;
         justify-content: center;
+        background-image: url('../images/MicrosoftTeams-image.png');
+        background-size: cover;
+
     }
 
     #message-container {
@@ -23,12 +26,17 @@
         position: fixed;
         padding-bottom: 30px;
         bottom: 0;
-        background-color: white;
-        max-width: 1200px;
-        width: 80%;
-        display: flex;
+        background-color: grey;
+        max-width: 1000px;
+        width: 50%;
+        display: inline-block;
     }
 
     #message-input, #userid-input {
         flex-grow: 1;
     }
+
+ul {
+
+    text-align: center;
+}

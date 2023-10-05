@@ -66,7 +66,7 @@ const deleteUser = (req, res) => {
 
 const updateUserPassword = (req, res) => {
 	let user_object = req.body;
-	console.log(user_object);
+	//console.log(user_object);
 	collection.updateUser(
 		{ username: user_object.username },
 		{ $set: { password: user_object.password } },
@@ -87,7 +87,7 @@ const updateExercise = (req, res) => {
 	let user = user_object.cookie1;
 	delete user_object.cookie1;
 	user_data = user_object;
-	console.log(user_data);
+	//console.log(user_data);
 	collection.updateUser(
 		{ username: user },
 		{ $set: user_data },
@@ -108,7 +108,7 @@ const postExercise = (req, res) => {
 	let user = user_object.cookie1;
 	delete user_object.cookie1;
 	user_data = user_object;
-	console.log("add exercise: ", user_data);
+	//console.log("add exercise: ", user_data);
 	collection.updateUser(
 		{ username: user },
 		{ $push: user_data },

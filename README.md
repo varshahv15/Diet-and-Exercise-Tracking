@@ -1,4 +1,4 @@
-# Project Title
+# Diet-and-Exercise-Tracking
 
 Diet-and-Exercise-Tracking
 

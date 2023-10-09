@@ -4,7 +4,11 @@ Diet-and-Exercise-Tracking
 
 ## Description
 
-    Description
+  The project introduces a comprehensive health and fitness application that adapts to users' lifestyles without adding extra stress.
+  The application includes:
+    Diet Logging
+    Physical Activity Tracking.
+    Calorie Calculator.
 
 ## Getting Started
 
@@ -20,12 +24,14 @@ Diet-and-Exercise-Tracking
 ```
 git clone https://github.com/varshahv15/Diet-and-Exercise-Tracking.git
 ```
+
 * 2/ Go to Diet-and-Exercise-Tracking Folder
-* 3/ Open the Terminal/Command Line in side the folder location
+* 3/ Open the Terminal/Command Line inside the folder location
 
 ### Executing program
 
 * 1/ Run the program:
+
 ```
 npm start
 ```
@@ -39,13 +45,16 @@ npm test
 ## Help
 
 Any advise for common problems or issues.
+
+* If have any problem in running or testing
 ```
-command to run if program contains helper info
+npm install express mongodb-legacy socket.io ejs chai mocha chai-http cookie-parser
 ```
 
 ## Authors
 
 Contributors names and contact info
+SIT725_Group12
 
 ## Version History
 
